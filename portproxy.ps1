@@ -20,7 +20,16 @@ if(-Not $PSBoundParameters.ContainsKey('user')) {
 
 $portsArray = [int[]]($ports -split ',')
 $response = wsl ip route get 8.8.8.8
-$wslIp = ($response -split ' ')[2]
+$response = $response -split ' '
+$foundSource = $false
+
+foreach($item in $response) {
+    $wslIp = $item
+    if($foundSource) {
+        break
+    }
+    $foundSource = $item -eq 'src'
+}
 
 
 Write-Host "Creating proxy for user $user on distro $distro whose ip is: $wslIp"

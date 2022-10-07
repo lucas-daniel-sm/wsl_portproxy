@@ -4,11 +4,11 @@
 ## Usage
  It's simple, just tell to script what ports you need separeted by comma
 
- `./proxy_ports -ports 3000,3056`
+ `./portproxy -ports 3000,3056`
 
  You canspecify a distro and an user if you wnat
 
- `./proxy_ports -distro Ubuntu-20.04 -user lucas -ports 3000`
+ `./portproxy -distro Ubuntu-20.04 -user lucas -ports 3000`
 
 ## Parameters
 
